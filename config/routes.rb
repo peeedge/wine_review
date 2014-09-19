@@ -1,9 +1,14 @@
 WineReview::Application.routes.draw do
-  get "/wines/" => "wines#index", as: 'wines'
-  get "/wines/:id" => "wines#show", as: 'wine'
+get "/wine_review" => "wines#index", as: 'wines'
+get "/wine_review/new" => "wines#new", as: 'new_wine'
+get "/wine_review/:id" => "wines#show", as: 'wine'
+post "/wine_review" => "wines#create"
+get "/wine_review/:id/edit" => "wines#edit", as: 'edit_wine'
+patch "/wine_review/:id" => "wines#update"
+delete "/wine_review/:id" => "wines#destroy"
   
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all? { |e|  } your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
