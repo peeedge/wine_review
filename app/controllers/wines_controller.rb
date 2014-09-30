@@ -13,16 +13,22 @@ class WinesController < ApplicationController
 
   def create
   	@wine = Wine.new(wine_params)
-  	@wine.save
-  	redirect_to @wine
+  	if @wine.save
+  	 redirect_to @wine
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-  	@wine.update(wine_params)
+  	if @wine.update(wine_params)
   	redirect_to @wine
+    else
+      render :new
+    end
   end
 
   def destroy
