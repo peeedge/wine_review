@@ -6,6 +6,7 @@ post "/wine_review" => "wines#create"
 get "/wine_review/:id/edit" => "wines#edit", as: 'edit_wine'
 patch "/wine_review/:id" => "wines#update"
 delete "/wine_review/:id" => "wines#destroy"
+root 'wines#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all? { |e|  } your routes lay out with "rake routes".
