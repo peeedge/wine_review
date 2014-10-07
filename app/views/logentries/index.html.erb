@@ -15,4 +15,9 @@
   <% end %>
 </ol>
 
-<%= link_to 'Write a Log Entry', new_wine_logentry_path(@wine) %>
+<%= link_to 'Write a Log Entry', new_wine_logentry_path(@wine),
+        remote: true,
+        data: { 'update-target' => 'logentry_form_container' },
+        class: 'btn btn-primary' %>
+
+<div id="logentry_form_container"></div>
