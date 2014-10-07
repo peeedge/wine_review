@@ -1,7 +1,7 @@
 class WinesController < ApplicationController
   def index
 	@available_at = Time.now
-	@wines = Wine.order(:name).page(params[:page])
+  @wines = Wine.includes(:logentries).order(:name).page(params[:page])
   end
 
   def show
