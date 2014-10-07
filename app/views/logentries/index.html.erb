@@ -3,14 +3,16 @@
   <% @logentries.each do |logentry| %>
     
 	<li>
-	      <span class="logentry"><%= pluralize(logentry.stars, 'star') %></span>
+	      <span class="logentry"><%= pluralize(logentry.rating, 'star') %></span>
 	      <span class="user">by <%= logentry.name %> </span>
 	      <span class="date">
 	        <%= time_ago_in_words(logentry.created_at) %> ago
 	      </span>
 	      <p>
-	        &quot;<%= logentry.comment %>&quot;
+	        &quot;<%= logentry.comments %>&quot;
 	  	 </p>
     </li>
   <% end %>
 </ol>
+
+<%= link_to 'Write a Log Entry', new_wine_logentry_path(@wine) %>
