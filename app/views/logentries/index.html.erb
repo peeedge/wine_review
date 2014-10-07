@@ -3,10 +3,11 @@
   <% @logentries.each do |logentry| %>
     
 	<li>
-	      <span class="logentry"><%= pluralize(logentry.rating, 'star') %></span>
-	      <span class="user">by <%= logentry.name %> </span>
+	      <span class="user"><%= logentry.name %> tasted <%= link_to(@wine.name, @wine) %> on <%= logentry.tasted_on %>  </span>
+
+	      <span class="logentry"> and gave a rating of <%= pluralize(logentry.rating, 'star') %></span>
 	      <span class="date">
-	        <%= time_ago_in_words(logentry.created_at) %> ago
+	       -  <%= time_ago_in_words(logentry.created_at) %> ago
 	      </span>
 	      <p>
 	        &quot;<%= logentry.comments %>&quot;

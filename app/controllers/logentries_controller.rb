@@ -21,7 +21,7 @@ class LogentriesController < ApplicationController
 private
 
 	def logentry_params
-	  params.require(:logentry).permit(:rating, :name, :comments, :location)
+	  params.require(:logentry).permit(:rating, :name, :comments, :location, :tasted_on)
 	end
 
 	def set_wine
