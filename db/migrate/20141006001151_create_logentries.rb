@@ -7,7 +7,6 @@ class CreateLogentries < ActiveRecord::Migration
       t.string :comments
       t.datetime :tasted_on
       t.references :wine, index: true
-
       t.timestamps
     end
   end
